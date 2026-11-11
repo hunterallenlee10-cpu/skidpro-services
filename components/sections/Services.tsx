@@ -1,33 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import {
-  ArrowRight,
-  Building2,
-  CloudLightning,
-  HardHat,
-  Route,
-  Ruler,
-  Snowflake,
-  Tractor,
-  TreePine,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { serviceById, type ServiceId } from "@/lib/business";
 import { photos, type Photo } from "@/lib/images";
+import { serviceIcons } from "@/lib/serviceIcons";
 import { useQuote } from "../QuotePlanner/QuoteContext";
 import SectionHeading from "../SectionHeading";
-
-export const serviceIcons: Record<ServiceId, LucideIcon> = {
-  "land-clearing": Tractor,
-  "tree-removal": TreePine,
-  "gravel-driveways": Route,
-  "building-pads": Building2,
-  grading: Ruler,
-  "debris-cleanup": CloudLightning,
-  "snow-plowing": Snowflake,
-  "contract-work": HardHat,
-};
 
 const compact: ServiceId[] = [
   "tree-removal",

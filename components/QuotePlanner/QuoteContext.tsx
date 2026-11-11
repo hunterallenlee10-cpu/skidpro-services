@@ -24,11 +24,13 @@ export function QuoteProvider({ children }: { children: ReactNode }) {
     setOpen(true);
   }, []);
 
+  const close = useCallback(() => setOpen(false), []);
+
   return (
     <QuoteContext.Provider value={{ openQuote }}>
       {children}
       {session > 0 && (
-        <QuoteModal key={session} open={open} preset={preset} onClose={() => setOpen(false)} />
+        <QuoteModal key={session} open={open} preset={preset} onClose={close} />
       )}
     </QuoteContext.Provider>
   );
