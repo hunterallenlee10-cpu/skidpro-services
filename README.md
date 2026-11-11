@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SkidPro Services: concept site
 
-## Getting Started
+Front-end-only concept website for **SkidPro Services LLC** (Enid, OK), built by Lee Enterprises Unlimited as a spec demo for the owner, Adam Anderson. It is marked `noindex, nofollow` so it never competes with the owner's own listings.
 
-First, run the development server:
+Plan, design tokens and checklist: [`implementation_kickstart.md`](implementation_kickstart.md).
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build && npm start   # production check
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Edit content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Business facts** (phone, email, services, lines): `lib/business.ts`
+- **Photos** (paths, sizes, alt text): `lib/images.ts`
+- **Sections**: one file each in `components/sections/`
+- **Quote Planner**: `components/QuotePlanner/`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Swap or add photos
 
-## Learn More
+1. Drop originals in `public/images/raw/` (git-ignored).
+2. `npm run images` converts them to `.webp` in `public/images/`.
+3. Update the width, height and alt text in `lib/images.ts`.
+4. `node scripts/make-icons.mjs` rebuilds the favicon, Apple icon and OG logo if the logo changes.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy (Vercel)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Push to GitHub, then "Add New Project" in Vercel and import the repo. No environment variables needed. After the first deploy, set `siteUrl` in `lib/business.ts` to the real URL so canonical and Open Graph tags point to it. Vercel Analytics turns on automatically on Vercel deployments.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## What Adam needs to confirm or supply
 
-## Deploy on Vercel
+**Photos**
+- A real drone or wide shot of his machine for the hero (the current hero looks like an AI render). `lib/images.ts`, `Hero.tsx`
+- A photo of Adam with his machine (About section placeholder). `About.tsx`
+- A photo of his Deere 333G (Fleet placeholder). `Fleet.tsx`
+- A snow plowing job photo (the Snow section uses the trailer shot for now). `Snow.tsx`
+- Which machine is in photo 09 (the trailer shot).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Copy marked DRAFT**
+- About note in his voice ("I started SkidPro in 2025...", "When you call, you get me."). `About.tsx`
+- "Same property. One day of SkidPro." Was each job really one day? `BeforeAfter.tsx`
+- Quote success message: "Adam will reach out within one business day." `QuotePlanner.tsx`
+- Which attachments go with which machine (listed on both for now). `Fleet.tsx`
+- On-call and seasonal snow wording. `Snow.tsx`
+- Contact tile notes ("Adam picks up.", "Send a photo of the job."). `ContactHero.tsx`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Sample content to replace**
+- 3 sample reviews, each labelled on the page. Replace with real Google reviews. `Reviews.tsx`
+- "Leave us a review on Google" link (needs his Google Business Profile URL). `lib/business.ts`
+
+**Before going live**
+- Connect the Quote Planner to email or SMS (it is front-end only; the success screen offers Call and a prefilled Text). `QuotePlanner.tsx`
+- Set `siteUrl` and remove the `noindex` robots setting in `app/layout.tsx` if this becomes his real site.

@@ -41,6 +41,7 @@ export default function Nav() {
   }, [open]);
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
         scrolled || open
@@ -61,7 +62,7 @@ export default function Nav() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-[15px] font-medium text-text/80 transition-colors hover:text-accent"
+                className="flex min-h-11 items-center text-[15px] font-medium text-text/80 transition-colors hover:text-accent"
               >
                 {l.label}
               </Link>
@@ -72,7 +73,7 @@ export default function Nav() {
         <div className="flex items-center gap-2 sm:gap-4">
           <a
             href={business.tel}
-            className="hidden items-center gap-2 text-[15px] font-semibold md:flex hover:text-accent"
+            className="hidden min-h-11 items-center gap-2 text-[15px] font-semibold md:flex hover:text-accent"
           >
             <Phone aria-hidden className="size-4 text-accent" />
             {business.phoneDisplay}
@@ -91,10 +92,12 @@ export default function Nav() {
         </div>
       </nav>
 
+    </header>
+      {/* Outside the header: its backdrop blur would trap a fixed child. */}
       {open && (
         <div
           id="mobile-menu"
-          className="grain fixed inset-x-0 top-[68px] bottom-0 overflow-y-auto bg-bg lg:hidden"
+          className="grain fixed inset-x-0 top-[68px] bottom-0 z-40 overflow-y-auto bg-bg lg:hidden"
         >
           <div className="container-x flex min-h-full flex-col py-6">
             <ul className="flex flex-col">
@@ -133,6 +136,6 @@ export default function Nav() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }

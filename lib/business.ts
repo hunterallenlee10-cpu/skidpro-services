@@ -19,6 +19,7 @@ export const business = {
   facebook: "https://www.facebook.com/profile.php?id=61584121487895",
   // TODO: replace with Adam's real Google Business Profile review link once it exists.
   googleReviewUrl: "#",
+  // DRAFT: set to the real domain (or the Vercel URL) before sharing. Used for canonical and OG tags.
   siteUrl: "https://skidpro-services.vercel.app",
   tagline: "Power Built for Tough Jobs",
   lines: {

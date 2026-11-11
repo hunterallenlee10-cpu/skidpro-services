@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="grain relative flex min-h-[max(100svh,680px)] flex-col overflow-hidden"
+      className="grain relative flex min-h-[max(calc(100svh-60px),640px)] flex-col overflow-hidden md:min-h-[max(100svh,680px)]"
     >
       {/* Background photo with a slow push-in */}
       <motion.div
@@ -61,19 +61,19 @@ export default function Hero() {
           Now booking snow contracts
         </a>
 
-        <div className="flex flex-1 flex-col justify-end pb-10 pt-8 lg:pb-14">
-          <p className="eyebrow mb-5">
+        <div className="flex flex-1 flex-col justify-end pb-6 pt-5 sm:pb-10 sm:pt-8 lg:pb-14">
+          <p className="eyebrow mb-3 sm:mb-5">
             Enid, OK <span aria-hidden>·</span> Serving Northwest Oklahoma since 2025
           </p>
           <h1
             id="hero-title"
-            className="font-display text-[clamp(60px,9.4vw,136px)] font-black leading-[0.86] tracking-[-0.015em]"
+            className="font-display text-[clamp(54px,9.4vw,136px)] font-black leading-[0.86] tracking-[-0.015em]"
           >
             Power built <br className="hidden sm:block" />
             for tough jobs<span className="text-accent">.</span>
           </h1>
 
-          <p className="font-display mt-5 text-[clamp(30px,4vw,54px)] font-extrabold leading-[1.15]" aria-live="off">
+          <p className="font-display mt-4 text-[clamp(30px,4vw,54px)] sm:mt-5 font-extrabold leading-[1.15]" aria-live="off">
             We clear{" "}
             <span className="relative inline-grid align-baseline">
               <span className="sr-only">land, driveways, building pads, cedar and snow.</span>
@@ -93,12 +93,12 @@ export default function Hero() {
             </span>
           </p>
 
-          <p className="mt-5 max-w-[34rem] text-[17px] leading-relaxed text-text/85 sm:text-lg">
+          <p className="mt-4 max-w-[34rem] text-[17px] sm:mt-5 leading-relaxed text-text/85 sm:text-lg">
             Skid steer work from one local operator who answers his phone. Residential, commercial and
             agricultural.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
             <QuoteButton className="!min-h-14 px-7 text-[17px]" />
             <CallButton className="!min-h-14 px-6 text-[17px]" />
           </div>
@@ -112,7 +112,7 @@ export default function Hero() {
           {facts.map((f) => (
             <li
               key={f}
-              className="font-display flex min-h-[64px] items-center justify-center px-2 text-center text-[17px] font-extrabold leading-tight tracking-wide sm:min-h-[76px] sm:text-2xl lg:text-[28px]"
+              className="font-display flex min-h-[60px] items-center justify-center px-2 text-center text-[16px] font-extrabold leading-tight tracking-wide sm:min-h-[76px] sm:text-2xl lg:text-[28px]"
             >
               {f}
             </li>

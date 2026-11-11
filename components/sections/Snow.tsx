@@ -5,6 +5,7 @@ import QuoteButton from "../QuoteButton";
 
 const spots = ["Parking lots", "Driveways", "Roadways", "Business properties"];
 
+// DRAFT: confirm how on-call and seasonal work with Adam.
 const options = [
   { icon: PhoneCall, title: "On-call", line: "Call or text when it snows. We come out." },
   { icon: CalendarCheck, title: "Seasonal contract", line: "Your property is covered all season." },

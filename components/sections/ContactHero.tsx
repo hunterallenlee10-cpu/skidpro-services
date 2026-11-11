@@ -1,6 +1,7 @@
 import { Mail, MessageSquare, Phone } from "lucide-react";
 import { business } from "@/lib/business";
 
+// DRAFT: tile notes are suggested wording. Confirm with Adam.
 const tiles = [
   { icon: Phone, label: "Call", value: business.phoneDisplay, href: business.tel, note: "Adam picks up." },
   { icon: MessageSquare, label: "Text", value: business.phoneDisplay, href: business.sms, note: "Send a photo of the job." },
