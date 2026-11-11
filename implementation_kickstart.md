@@ -64,22 +64,22 @@ Real photos (02 to 09) never display larger than native size. Missing photos are
 
 ## Build checklist
 
-- [ ] Phase 1: scaffold, design tokens, fonts, grain texture, nav, hero, footer
-- [ ] Phase 2: services bento, before/after slider, cinematic strip
-- [ ] Phase 3: recent work, fleet, contract work, snow spotlight
-- [ ] Phase 4: about, how it works, sample reviews, service area, FAQ, final CTA
-- [ ] Phase 5: Quote Planner modal, wire every CTA (with service pre-select), mobile sticky bar, `/contact`
-- [ ] Phase 6: metadata, OG image, favicon, JSON-LD, noindex, image optimization, Lighthouse 90+
-- [ ] Phase 7: final review, commit, ready for GitHub and Vercel
+- [x] Phase 1: scaffold, design tokens, fonts, grain texture, nav, hero, footer
+- [x] Phase 2: services bento, before/after slider, cinematic strip
+- [x] Phase 3: recent work, fleet, contract work, snow spotlight
+- [x] Phase 4: about, how it works, sample reviews, service area, FAQ, final CTA
+- [x] Phase 5: Quote Planner modal, wire every CTA (with service pre-select), mobile sticky bar, `/contact`
+- [x] Phase 6: metadata, OG image, favicon, JSON-LD, noindex, image optimization, Lighthouse 90+
+- [x] Phase 7: final review, commit, ready for GitHub and Vercel
 
 ## Final review checklist
 
-- [ ] The hero alone would sell the job. Headline readable over the image on mobile.
-- [ ] Every "Get a Free Quote" opens the Planner. Phone and text links work.
-- [ ] Both before/after sliders work with mouse, touch and keyboard.
-- [ ] Zero em dashes, zero "--", zero stock or AI images added, zero invented facts.
-- [ ] Sample reviews and draft copy are visibly labelled.
-- [ ] Max 2 fonts, 3 colors plus text, motion in only 2 sections, no cursor effects or loading intro.
-- [ ] Mobile at 375px: no overflow, burger works, sticky call bar works.
-- [ ] Footer on both pages with the concept line. noindex present.
-- [ ] Lighthouse 90+.
+- [x] The hero alone would sell the job. Headline readable over the image on mobile.
+- [x] Every "Get a Free Quote" opens the Planner. Phone and text links work.
+- [x] Both before/after sliders work with mouse, touch and keyboard.
+- [x] Zero em dashes, zero "--", zero stock or AI images added, zero invented facts.
+- [x] Sample reviews and draft copy are visibly labelled.
+- [x] Max 2 fonts, 3 colors plus text, motion in only 2 sections, no cursor effects or loading intro.
+- [x] Mobile at 375px: no overflow, burger works, sticky call bar works.
+- [x] Footer on both pages with the concept line. noindex present.
+- [x] Lighthouse 90+ on Performance, Accessibility, Best Practices. SEO is 66 only because of the required noindex (every other SEO audit passes).

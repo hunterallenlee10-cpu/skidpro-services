@@ -10,27 +10,23 @@ const OUT = "public/images";
 // Drop the "-NOTE-..." part of a file name.
 const clean = (name) => name.replace(/-NOTE-[^.]*/, "").replace(/\.(jpe?g|png)$/i, "");
 
-// The hero and logo were screenshots with a mouse cursor in them. Patch it out.
+// The hero and logo were screenshots with a mouse cursor in them. Patch it out
+// (hero: clone nearby pixels; logo: the cursor sat on transparent space, so clear it).
 async function heroPipeline(file) {
   const patch = await sharp(file).extract({ left: 674, top: 388, width: 20, height: 28 }).toBuffer();
   return sharp(await sharp(file).composite([{ input: patch, left: 694, top: 388 }]).toBuffer());
 }
 async function logoPipeline(file) {
-  const white = await sharp({
-    create: { width: 18, height: 16, channels: 4, background: { r: 255, g: 255, b: 255, alpha: 1 } },
-  }).png().toBuffer();
-  const tip = await sharp({
-    create: { width: 7, height: 8, channels: 4, background: { r: 255, g: 255, b: 255, alpha: 1 } },
-  }).png().toBuffer();
-  return sharp(
-    await sharp(file)
-      .composite([
-        { input: white, left: 353, top: 306 },
-        { input: tip, left: 352, top: 299 },
-      ])
-      .png()
-      .toBuffer(),
-  );
+  // Clear gray/white cursor pixels in a small box. The logo's mountain there is brown, so it survives.
+  const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  for (let y = 292; y < 326; y++) {
+    for (let x = 346; x < 374; x++) {
+      const i = (y * info.width + x) * 4;
+      const [r, g, b] = [data[i], data[i + 1], data[i + 2]];
+      if (Math.max(r, g, b) - Math.min(r, g, b) < 28) data[i + 3] = 0;
+    }
+  }
+  return sharp(data, { raw: info }).png();
 }
 
 await mkdir(OUT, { recursive: true });
