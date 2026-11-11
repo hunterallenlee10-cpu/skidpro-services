@@ -65,7 +65,7 @@ Real photos (02 to 09) never display larger than native size. Missing photos are
 ## Build checklist
 
 - [x] Phase 1: scaffold, design tokens, fonts, grain texture, nav, hero, footer
-- [ ] Phase 2: services bento, before/after slider, cinematic strip
+- [x] Phase 2: services bento, before/after slider, cinematic strip
 - [ ] Phase 3: recent work, fleet, contract work, snow spotlight
 - [ ] Phase 4: about, how it works, sample reviews, service area, FAQ, final CTA
 - [ ] Phase 5: Quote Planner modal, wire every CTA (with service pre-select), mobile sticky bar, `/contact`
