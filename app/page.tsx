@@ -6,6 +6,12 @@ import RecentWork from "@/components/sections/RecentWork";
 import Fleet from "@/components/sections/Fleet";
 import ContractWork from "@/components/sections/ContractWork";
 import Snow from "@/components/sections/Snow";
+import About from "@/components/sections/About";
+import HowItWorks from "@/components/sections/HowItWorks";
+import Reviews from "@/components/sections/Reviews";
+import ServiceArea from "@/components/sections/ServiceArea";
+import FAQ from "@/components/sections/FAQ";
+import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -20,6 +26,12 @@ export default function Home() {
         <Fleet />
         <ContractWork />
         <Snow />
+        <About />
+        <HowItWorks />
+        <Reviews />
+        <ServiceArea />
+        <FAQ />
+        <FinalCTA />
       </main>
       <Footer />
     </>
