@@ -95,7 +95,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <MobileBar />
           <BackToTop />
         </QuoteProvider>
-        <Analytics />
+        {/* Vercel serves the analytics script only on its own deployments. */}
+        {process.env.VERCEL && <Analytics />}
       </body>
     </html>
   );

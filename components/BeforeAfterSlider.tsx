@@ -96,7 +96,7 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
         alt={after.alt}
         width={after.width}
         height={after.height}
-        sizes={`${after.width}px`}
+        sizes={`(max-width: 640px) 100vw, ${after.width}px`}
         draggable={false}
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
@@ -106,7 +106,7 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
           alt={before.alt}
           width={before.width}
           height={before.height}
-          sizes={`${before.width}px`}
+          sizes={`(max-width: 640px) 100vw, ${before.width}px`}
           draggable={false}
           className="pointer-events-none h-full w-full object-cover"
         />

@@ -69,7 +69,7 @@ Real photos (02 to 09) never display larger than native size. Missing photos are
 - [x] Phase 3: recent work, fleet, contract work, snow spotlight
 - [x] Phase 4: about, how it works, sample reviews, service area, FAQ, final CTA
 - [x] Phase 5: Quote Planner modal, wire every CTA (with service pre-select), mobile sticky bar, `/contact`
-- [ ] Phase 6: metadata, OG image, favicon, JSON-LD, noindex, image optimization, Lighthouse 90+
+- [x] Phase 6: metadata, OG image, favicon, JSON-LD, noindex, image optimization, Lighthouse 90+
 - [ ] Phase 7: final review, commit, ready for GitHub and Vercel
 
 ## Final review checklist

@@ -33,7 +33,6 @@ function PhotoTile({ id, photo, className, imgClass }: { id: ServiceId; photo: P
     <button
       type="button"
       onClick={() => openQuote(id)}
-      aria-label={`${s.title}. Get a free quote`}
       className={`card group relative isolate flex flex-col justify-end overflow-hidden text-left transition-transform duration-300 hover:-translate-y-1 ${className}`}
     >
       <Image
@@ -65,12 +64,12 @@ function CompactTile({ id }: { id: ServiceId }) {
     <button
       type="button"
       onClick={() => openQuote(id)}
-      aria-label={`${s.title}. Get a free quote`}
       className="card group relative flex flex-col overflow-hidden p-6 text-left transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-accent/40"
     >
       <Icon aria-hidden className="size-7 text-accent" strokeWidth={1.75} />
       <h3 className="font-display mt-5 text-[26px] font-extrabold leading-none">{s.title}</h3>
       <p className="mt-2 text-[15px] leading-snug text-muted">{s.line}</p>
+      <span className="sr-only">Get a free quote</span>
       <Underline />
     </button>
   );
